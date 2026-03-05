@@ -1,0 +1,13 @@
+name: bioinfo
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.10
+  - plink
+  - plink2
+  - admixture
+  - numpy
+  - pandas
+  - matplotlib
+  - ipykernel
