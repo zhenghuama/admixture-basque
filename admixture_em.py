@@ -124,7 +124,7 @@ def em_admixture(
     early_stop_rate: float,
     random_seed: int,
     min_prob: float,
-    iteration_logger: Callable[[int, float, float], None] | None = None,
+    iteration_logger: Callable[[int, float, float], None],
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     """
     Baseline EM for admixture model.
@@ -135,7 +135,7 @@ def em_admixture(
         - early_stop_rate: Relative log-likelihood improvement threshold for early stopping.
         - random_seed: 42 lol
         - min_prob: Minimum probability for numerical stability.
-        - iteration_logger: Callback for logging iteration info (iteration, log-likelihood, delta
+        - iteration_logger: Callback for logging iteration info (iteration, log-likelihood, delta)
     Outputs:
         - q: N x K matrix of admixture proportions.
         - f: K x M matrix of allele frequencies.
@@ -170,8 +170,7 @@ def em_admixture(
         delta = ll - prev_ll if np.isfinite(prev_ll) else np.nan 
         llh_log[it - 1] = ll.astype(np.float64)
 
-        if iteration_logger is not None:
-            iteration_logger(it, ll, delta)
+        iteration_logger(it, ll, delta)
 
         if it > 1 and abs(delta) <= early_stop_rate * (1.0 + abs(prev_ll)):
             llh_log = llh_log[:it]
@@ -249,7 +248,6 @@ def run_admixture(
       results = run_admixture(...)
     """
     input_prefix = Path(input_prefix)
-    script_dir = Path(__file__).resolve().parent
     out_dir = Path(output_folder)
     out_dir.mkdir(parents=True, exist_ok=True)
 

@@ -247,8 +247,8 @@ def em_squarem_admixture(
     early_stop_rate: float,
     random_seed: int,
     min_prob: float,
-    squarem_step_max: float = 10.0,
-    iteration_logger: Callable[[int, float, float, int], None] | None = None,
+    squarem_step_max: float,
+    iteration_logger: Callable[[int, float, float, int], None],
 ) -> tuple[np.ndarray, np.ndarray]:
     """
     Baseline EM for admixture model.
@@ -297,8 +297,7 @@ def em_squarem_admixture(
         delta = ll - prev_ll if np.isfinite(prev_ll) else np.nan
         llh_log[it - 1] = ll
 
-        if iteration_logger is not None:
-            iteration_logger(it, ll, delta, squarem_status[it - 2]) if it > 1 else iteration_logger(it, ll, delta, -1)
+        iteration_logger(it, ll, delta, squarem_status[it - 2]) if it > 1 else iteration_logger(it, ll, delta, -1)
 
         if it > 1 and abs(delta) <= early_stop_rate * (1.0 + abs(prev_ll)):
             llh_log = llh_log[:it]  # trim to actual iterations
