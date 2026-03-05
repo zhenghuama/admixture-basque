@@ -1,4 +1,4 @@
-## Admixture with EM algorithm with Squared Extrapolation Methods
+## Admixture with EM algorithm using Squared Extrapolation Methods
 
 ### Introduction
 
