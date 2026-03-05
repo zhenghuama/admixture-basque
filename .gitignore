@@ -1,0 +1,11 @@
+__pycache__/**
+baseline/
+step1/
+step2/
+!data_and_results/step1/
+!data_and_results/step2/
+*.vcf.gz
+**/intermediate/**
+!**/intermediate/**.pruned.bed
+!**/intermediate/**.pruned.bim
+!**/intermediate/**.pruned.fam

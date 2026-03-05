@@ -1,0 +1,16 @@
+****      Baseline ADMIXTURE: E-M      ****
+K=3
+Samples=462 SNPs=26472
+
+1	Loglikelihood: -5723246.614208	(delta): NA
+2	Loglikelihood: -5696437.699378	(delta): 26808.914830
+3	Loglikelihood: -5690831.195611	(delta): 5606.503768
+4	Loglikelihood: -5686814.632442	(delta): 4016.563168
+5	Loglikelihood: -5683874.889685	(delta): 2939.742757
+6	Loglikelihood: -5681684.008389	(delta): 2190.881296
+7	Loglikelihood: -5680014.759069	(delta): 1669.249320
+8	Loglikelihood: -5678707.498777	(delta): 1307.260292
+9	Loglikelihood: -5677656.500490	(delta): 1050.998287
+10	Loglikelihood: -5676789.085165	(delta): 867.415325
+
+Runtime(s): 39.94

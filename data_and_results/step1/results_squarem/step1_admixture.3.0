@@ -1,0 +1,16 @@
+****      Baseline ADMIXTURE: E-M + SQUAREM      ****
+K=3
+Samples=462 SNPs=26472
+
+1	Loglikelihood: -5723246.614208	(delta): NA
+2	Loglikelihood: -5685189.825845	(delta): 38056.788363	(SQUAREM USED): 1
+3	Loglikelihood: -5674379.991795	(delta): 10809.834050	(SQUAREM USED): 1
+4	Loglikelihood: -5667678.739569	(delta): 6701.252226	(SQUAREM USED): 1
+5	Loglikelihood: -5629551.698230	(delta): 38127.041339	(SQUAREM USED): 1
+6	Loglikelihood: -5512323.175250	(delta): 117228.522981	(SQUAREM USED): 1
+7	Loglikelihood: -5467470.394660	(delta): 44852.780589	(SQUAREM USED): 1
+8	Loglikelihood: -5415595.462253	(delta): 51874.932407	(SQUAREM USED): 1
+9	Loglikelihood: -5389271.537627	(delta): 26323.924626	(SQUAREM USED): 1
+10	Loglikelihood: -5372577.187135	(delta): 16694.350492	(SQUAREM USED): 1
+
+Runtime(s): 53.11
