@@ -6,14 +6,15 @@
 # Usage: ./ps2_run_admixture.sh
 
 # Paths to data files you will need
-VCF=~/bioinfo/baseline/base_dataset/ALL.chr21.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz
-SAMPLEINFO=~/bioinfo/baseline/base_dataset/igsr_samples.tsv
+VCF=./data_and_results/step1/dataset/ALL.chr21.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz
+SAMPLEINFO=./data_and_results/step1/dataset/igsr_samples.tsv
 
 # Output prefix to use
 PREFIX=step1_admixture
-SCRIPT_DIR="."
-INTERMEDIATE_DIR="${SCRIPT_DIR}/intermediate"
+DATA_DIR="./data_and_results/step1"
+INTERMEDIATE_DIR="${DATA_DIR}/intermediate"
 mkdir -p "$INTERMEDIATE_DIR"
+
 
 # Keep all preprocessing artifacts under step1/intermediate/
 BASE_PREFIX="${INTERMEDIATE_DIR}/${PREFIX}"

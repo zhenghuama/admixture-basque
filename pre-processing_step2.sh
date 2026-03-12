@@ -11,8 +11,8 @@ SAMPLEINFO=./data_and_results/step2/dataset/igsr_samples.tsv
 
 # Output prefix to use
 PREFIX=step2_admixture
-SCRIPT_DIR="."
-INTERMEDIATE_DIR="${SCRIPT_DIR}/data_and_results/step2/intermediate"
+DATA_DIR="./data_and_results/step2"
+INTERMEDIATE_DIR="${DATA_DIR}/intermediate"
 mkdir -p "$INTERMEDIATE_DIR"
 
 # Keep all preprocessing artifacts under step2/intermediate/

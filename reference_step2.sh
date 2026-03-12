@@ -11,14 +11,14 @@ BASE_PREFIX="${INTERMEDIATE_DIR}/${PREFIX}"
 PRUNED_PREFIX="${INTERMEDIATE_DIR}/${PREFIX}.pruned"
 RESULTS_PREFIX="${REF_RESULTS_DIR}/${PREFIX}"
 
-for K in 3 5
+for K in 3
 do
     #echo "Not implemented - ADMIXTURE for K=$K"
     admixture "${PRUNED_PREFIX}.bed" "$K" > "${RESULTS_PREFIX}.${K}.0"
 done
 
-for K in 3 5
+for K in 3
 do
-    mv "${SCRIPT_DIR}/${PREFIX}.pruned.${K}.P" "${RESULTS_PREFIX}.${K}.P"
-    mv "${SCRIPT_DIR}/${PREFIX}.pruned.${K}.Q" "${RESULTS_PREFIX}.${K}.Q"
+    mv "${SCRIPT_DIR}/${PREFIX}.pruned.${K}.P" "${RESULTS_PREFIX}.pruned.${K}.P"
+    mv "${SCRIPT_DIR}/${PREFIX}.pruned.${K}.Q" "${RESULTS_PREFIX}.pruned.${K}.Q"
 done

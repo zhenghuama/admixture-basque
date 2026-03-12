@@ -5,6 +5,7 @@ step2/
 !data_and_results/step1/
 !data_and_results/step2/
 *.vcf.gz
+*.vcf.bgz
 **/intermediate/**
 !**/intermediate/**.pruned.bed
 !**/intermediate/**.pruned.bim

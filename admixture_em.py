@@ -20,6 +20,7 @@ import time
 from pathlib import Path
 from typing import Callable
 import numpy as np
+import argparse
 
 
 def count_lines(path: Path) -> int:
@@ -297,3 +298,64 @@ def run_admixture(
 
 
     return None
+
+
+
+if __name__ == "__main__":
+    
+    parser = argparse.ArgumentParser(
+        description="Run baseline ADMIXTURE E-M algorithm"
+    )
+    parser.add_argument(
+        "--input_prefix",
+        default="data_and_results/step1/intermediate/step1_admixture.pruned",
+        help="Path prefix for PLINK binary files (without .bed/.bim/.fam extension)"
+    )
+    parser.add_argument(
+        "--output_folder",
+        default="data_and_results/step1/results_em",
+        help="Output folder for results (default: results)"
+    )
+    parser.add_argument(
+        "--k_values",
+        type=int,
+        nargs="+",
+        default=[3, 5],
+        help="K values to run (default: 3 5)"
+    )
+    parser.add_argument(
+        "--max_iters",
+        type=int,
+        default=1000,
+        help="Maximum EM iterations (default: 1000)"
+    )
+    parser.add_argument(
+        "--early_stop_rate",
+        type=float,
+        default=2e-6,
+        help="Early stopping threshold (default: 2e-6)"
+    )
+    parser.add_argument(
+        "--random_seed",
+        type=int,
+        default=42,
+        help="Random seed (default: 42)"
+    )
+    parser.add_argument(
+        "--min_prob",
+        type=float,
+        default=1e-6,
+        help="Minimum probability for stability (default: 1e-6)"
+    )
+    
+    args = parser.parse_args()
+    
+    run_admixture(
+        input_prefix=args.input_prefix,
+        output_folder=args.output_folder,
+        k_values=args.k_values,
+        max_iters=args.max_iters,
+        early_stop_rate=args.early_stop_rate,
+        random_seed=args.random_seed,
+        min_prob=args.min_prob
+    )

@@ -102,4 +102,4 @@ Samples=462 SNPs=26472
 98	Loglikelihood: -5215906.473538	(delta): 57.746138	(SQUAREM USED): 1
 99	Loglikelihood: -5215897.854335	(delta): 8.619203	(SQUAREM USED): 1
 
-Runtime(s): 243.02
+Runtime(s): 146.70
